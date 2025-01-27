@@ -1,2478 +1,2039 @@
 {
-	"info": {
-		"_postman_id": "388d68cf-a49d-4cd5-98e4-4cd1c6923ae4",
-		"name": "DummyAPI",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18306743",
-		"_collection_link": "https://eglegriciute.postman.co/workspace/Json-Placeholder-API~5e0d2bde-15bd-4ed6-a07f-b1647736248f/collection/18306743-388d68cf-a49d-4cd5-98e4-4cd1c6923ae4?action=share&source=collection_link&creator=18306743"
-	},
-	"item": [
-		{
-			"name": "Intro",
-			"item": [
-				{
-					"name": "Test",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/test",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"test"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limiting Resources",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/?limit=0&skip=0&select=key1&select=key2&select=key3\n",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								""
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "0"
-								},
-								{
-									"key": "skip",
-									"value": "0"
-								},
-								{
-									"key": "select",
-									"value": "key1"
-								},
-								{
-									"key": "select",
-									"value": "key2"
-								},
-								{
-									"key": "select",
-									"value": "key3\n"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delay Responses",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/?delay=4000",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								""
-							],
-							"query": [
-								{
-									"key": "delay",
-									"value": "4000"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Resources as Authorized User",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{loginAccessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/auth/products",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"auth",
-								"products"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Dynamic Image",
-			"item": [
-				{
-					"name": "Square image",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/400x200/282828",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"400x200",
-								"282828"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Custom size image",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/200x100",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"200x100"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Image with custom text",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/400x200/008080/ffffff?text=Hello+Peter",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"400x200",
-								"008080",
-								"ffffff"
-							],
-							"query": [
-								{
-									"key": "text",
-									"value": "Hello+Peter"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Image with custom colors",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/400x200/282828",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"400x200",
-								"282828"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Image with different formats",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/400x200?type=webp&text=I+am+a+webp+image",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"400x200"
-							],
-							"query": [
-								{
-									"key": "type",
-									"value": "webp"
-								},
-								{
-									"key": "text",
-									"value": "I+am+a+webp+image"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Image with custom font family",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/400x200/282828?fontFamily=pacifico&text=I+am+a+pacifico+font",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"400x200",
-								"282828"
-							],
-							"query": [
-								{
-									"key": "fontFamily",
-									"value": "pacifico"
-								},
-								{
-									"key": "text",
-									"value": "I+am+a+pacifico+font"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Image with custom font size",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/image/400x200/008080/ffffff?text=Hello+Peter!&fontSize=16",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"image",
-								"400x200",
-								"008080",
-								"ffffff"
-							],
-							"query": [
-								{
-									"key": "text",
-									"value": "Hello+Peter!"
-								},
-								{
-									"key": "fontSize",
-									"value": "16"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Identicon",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/icon/abc123/150",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"icon",
-								"abc123",
-								"150"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Authorization",
-			"item": [
-				{
-					"name": "Login user",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Generating JSON data:\r",
-									"let jsonData = pm.response.json();\r",
-									"\r",
-									"// Destructuring refreshToken/accessToken data from JSON object:\r",
-									"let {refreshToken, accessToken} = jsonData;\r",
-									"\r",
-									"// Setting key/value pairs as global variables:\r",
-									"if (accessToken && refreshToken) {\r",
-									"    pm.globals.set(\"loginRefreshToken\", refreshToken);\r",
-									"    pm.globals.set(\"loginAccessToken\", accessToken);\r",
-									"} else {\r",
-									"    console.log(\"Tokens are missing\");\r",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"sophiab\",\r\n    \"password\": \"sophiabpass\",\r\n    // Passing max acceptable value as per BVA (Boundary Value Analysis):\r\n    \"expiresInMins\": 43200\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/auth/login",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Current authorized user",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{loginAccessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/auth/me",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"auth",
-								"me"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh authorized session",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"refreshToken\": \"{{loginRefreshToken}}\",\r\n    \"expiresinMins\": 30\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/auth/refresh",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"auth",
-								"refresh"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Products",
-			"item": [
-				{
-					"name": "All products",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single product",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Search products",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/search?q=phone",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"search"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "phone"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip products",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products?limit=10&skip=10&select=title,price",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "10"
-								},
-								{
-									"key": "skip",
-									"value": "10"
-								},
-								{
-									"key": "select",
-									"value": "title,price"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Sort products",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products?sortBy=title&order=asc",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products"
-							],
-							"query": [
-								{
-									"key": "sortBy",
-									"value": "title"
-								},
-								{
-									"key": "order",
-									"value": "asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Products categories",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/categories",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"categories"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Products category list",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/category-list",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"category-list"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Products by a category",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/products/category/smartphones",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"category",
-								"smartphones"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a product",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"BMW Pencil\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/products/add",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a product",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"iPhone Galaxy +1\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/products/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a product",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"message\": \"Product deleted successfully\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/products/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"products",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Carts",
-			"item": [
-				{
-					"name": "All carts",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/carts",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"carts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single cart",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/carts/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"carts",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Cart by user id",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/carts/user/6",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"carts",
-								"user",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a cart",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userId\": 51,\r\n    \"products\": [\r\n      {\r\n        \"id\": 124,\r\n        \"quantity\": 2\r\n      },\r\n      {\r\n        \"id\": 2,\r\n        \"quantity\": 3\r\n      }\r\n    ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/carts/add",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"carts",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a cart",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"merge\": true, // this will include existing products in the cart\r\n    \"products\": [\r\n      {\r\n        \"id\": 5,\r\n        \"quantity\": 4\r\n      }\r\n    ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/carts/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"carts",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a cart",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/carts/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"carts",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Recipes",
-			"item": [
-				{
-					"name": "All recipes",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single recipe",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Search recipes",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes/search?q=Vegetarian",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes",
-								"search"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "Vegetarian"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip recipes",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes?limit=2&skip=15&select=name,image",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "2"
-								},
-								{
-									"key": "skip",
-									"value": "15"
-								},
-								{
-									"key": "select",
-									"value": "name,image"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Sort recipes",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes?sortBy=name&order=desc",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes"
-							],
-							"query": [
-								{
-									"key": "sortBy",
-									"value": "name"
-								},
-								{
-									"key": "order",
-									"value": "desc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "All tags",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes/tags",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes",
-								"tags"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Recipes by a tag",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes/tag/Chicken",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes",
-								"tag",
-								"Chicken"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Recipes by a meal",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/recipes/meal-type/lunch",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"recipes",
-								"meal-type",
-								"lunch"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "All users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login user and get tokens",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"let jsonData = pm.response.json();\r",
-									"let {accessToken} = jsonData;\r",
-									"\r",
-									"if (accessToken) {\r",
-									"    pm.globals.set(\"usersAccessToken\", accessToken);\r",
-									"} else {\r",
-									"    console.log(\"Access token is missing!\")\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"madisonc\",\r\n    \"password\": \"madisoncpass\",\r\n    \"expiresInMins\": 43200 // max set value\r\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/user/login",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"user",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get current authenticated user",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{usersAccessToken}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{base_url_dummy}}/user/me",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"user",
-								"me"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single user",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Search users",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/search?q=Stewart",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"search"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "Stewart"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Filter users",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/filter?key=hair.color&value=Red",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"filter"
-							],
-							"query": [
-								{
-									"key": "key",
-									"value": "hair.color"
-								},
-								{
-									"key": "value",
-									"value": "Red"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip users",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users?limit=3&skip=0&select=firstName,hair",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "3"
-								},
-								{
-									"key": "skip",
-									"value": "0"
-								},
-								{
-									"key": "select",
-									"value": "firstName,hair"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Sort users",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users?sortBy=age&order=desc",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "sortBy",
-									"value": "age"
-								},
-								{
-									"key": "order",
-									"value": "desc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "All posts tags",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/tags",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"tags"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Posts tag list",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/tag-list",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"tag-list"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Posts by a tag",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/tag/nostalgia",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"tag",
-								"nostalgia"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "User's carts by user id",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/50/carts",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"50",
-								"carts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "User's posts by user id",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/5/posts",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"5",
-								"posts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "User's todos by user id",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/6/todos",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"6",
-								"todos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a new user",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Eglė\",\r\n    \"lastName\": \"Griciūtė\",\r\n    \"maidenName\": \"Griciūtė\",\r\n    \"age\": 30,\r\n    \"gender\": \"female\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/users/add",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a user",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"hair\": {\r\n        \"color\": \"red\",\r\n        \"type\": \"wavy\"\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/users/208",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"208"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a user",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/users/208",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"users",
-								"208"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Posts",
-			"item": [
-				{
-					"name": "All posts",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single post",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/10",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Search posts",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/search?q=rainbow",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"search"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "rainbow"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip posts",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts?limit=7&skip=0&select=title,reactions,userId,tags",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "7"
-								},
-								{
-									"key": "skip",
-									"value": "0"
-								},
-								{
-									"key": "select",
-									"value": "title,reactions,userId,tags"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Sort posts",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts?sortBy=views&order=asc",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts"
-							],
-							"query": [
-								{
-									"key": "sortBy",
-									"value": "views"
-								},
-								{
-									"key": "order",
-									"value": "asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "All posts by user id",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/user/6",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"user",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Post's comments",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/2/comments",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"2",
-								"comments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a post",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"I am in love with someone.\",\r\n    \"userId\": 9\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/add",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a post",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"I think I should shift to the moon\",\r\n    \"reactions\": {\r\n        \"likes\": 0,\r\n        \"dislikes\": 30\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/5",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"5"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a post",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/posts/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"posts",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Comments",
-			"item": [
-				{
-					"name": "All comments",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Get comment count for postId 46\", function () {\r",
-									"    const responseData = pm.response.json();\r",
-									"    const postId46 = responseData.comments.filter(comment => comment.postId === 46);\r",
-									"    const commentCount = postId46.length;\r",
-									"    console.log(\"Comment count for postId 46: \" + commentCount);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/comments",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single comment",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Check comment count with id=46\", function () {\r",
-									"    let jsonData = pm.response.json();\r",
-									"    console.log(jsonData);\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/comments/46",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments",
-								"46"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip comments",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/comments?limit=4&skip=15&select=body,postId",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "4"
-								},
-								{
-									"key": "skip",
-									"value": "15"
-								},
-								{
-									"key": "select",
-									"value": "body,postId"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "All comments by post id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Check comment count with id=46\", function () {\r",
-									"    let jsonData = pm.response.json().total;\r",
-									"    console.log(jsonData);\r",
-									"})"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/comments/post/2",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments",
-								"post",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a comment",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Lorem ipsum!\",\r\n    \"postId\": 3,\r\n    \"userId\": 5\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/comments/add",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a comment",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"body\": \"Lorem ipsum!\",\r\n    \"dislikes\": 6\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/comments/10",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a comment",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/comments/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"comments",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Todos",
-			"item": [
-				{
-					"name": "All todos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/todos",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single todo",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/todos/5",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos",
-								"5"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Random todo",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/todos/random/10",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos",
-								"random",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip todos",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/todos?limit=2&skip=0",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "2"
-								},
-								{
-									"key": "skip",
-									"value": "0"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a todo",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"todo\": \"Use DummyJSON in the project\",\r\n    \"completed\": true,\r\n    \"userId\": 5\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/todos/add",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a todo",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"completed\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url_dummy}}/todos/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a todo",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/todos/1",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"todos",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Quotes",
-			"item": [
-				{
-					"name": "All quotes",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/quotes",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"quotes"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Single quote",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/quotes/7",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"quotes",
-								"7"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Random quote",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/quotes/random/3",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"quotes",
-								"random",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Limit and skip quotes",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/quotes?limit=9&skip=3",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"quotes"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "9"
-								},
-								{
-									"key": "skip",
-									"value": "3"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Mock HTTP",
-			"item": [
-				{
-					"name": "Mock HTTP Response",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_dummy}}/http/200",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"http",
-								"200"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Custom HTTP Response",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{base_url_dummy}}/http/204/",
-							"host": [
-								"{{base_url_dummy}}"
-							],
-							"path": [
-								"http",
-								"204",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					"// Check status code is valid\r",
-					"pm.test(\"Status code is valid\", function () {\r",
-					"    pm.expect([200, 201, 204]).to.include(pm.response.code);\r",
-					"});\r",
-					"\r",
-					"// Check response Content-Type is valid\r",
-					"pm.test('Response Content-Type is valid', function () {\r",
-					"    const contentType = pm.response.headers.get('Content-Type');\r",
-					"    const validTypes = ['application/json', 'image/png', 'image/webp'];\r",
-					"    pm.expect(validTypes.some(type => contentType.includes(type)), `Content-Type should be one of: ${validTypes.join(', ')}`).to.be.true;\r",
-					"});\r",
-					""
-				]
-			}
-		}
-	]
+  "info": {
+    "_postman_id": "388d68cf-a49d-4cd5-98e4-4cd1c6923ae4",
+    "name": "DummyAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18306743",
+    "_collection_link": "https://eglegriciute.postman.co/workspace/Json-Placeholder-API~5e0d2bde-15bd-4ed6-a07f-b1647736248f/collection/18306743-388d68cf-a49d-4cd5-98e4-4cd1c6923ae4?action=share&source=collection_link&creator=18306743"
+  },
+  "item": [
+    {
+      "name": "Intro",
+      "item": [
+        {
+          "name": "Test",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/test",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["test"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limiting Resources",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/?limit=0&skip=0&select=key1&select=key2&select=key3\n",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", ""],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "0"
+                },
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "select",
+                  "value": "key1"
+                },
+                {
+                  "key": "select",
+                  "value": "key2"
+                },
+                {
+                  "key": "select",
+                  "value": "key3\n"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delay Responses",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/?delay=4000",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", ""],
+              "query": [
+                {
+                  "key": "delay",
+                  "value": "4000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resources as Authorized User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{loginAccessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/auth/products",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["auth", "products"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dynamic Image",
+      "item": [
+        {
+          "name": "Square image",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/400x200/282828",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "400x200", "282828"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Custom size image",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/200x100",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "200x100"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image with custom text",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/400x200/008080/ffffff?text=Hello+Peter",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "400x200", "008080", "ffffff"],
+              "query": [
+                {
+                  "key": "text",
+                  "value": "Hello+Peter"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image with custom colors",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/400x200/282828",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "400x200", "282828"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image with different formats",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/400x200?type=webp&text=I+am+a+webp+image",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "400x200"],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "webp"
+                },
+                {
+                  "key": "text",
+                  "value": "I+am+a+webp+image"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image with custom font family",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/400x200/282828?fontFamily=pacifico&text=I+am+a+pacifico+font",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "400x200", "282828"],
+              "query": [
+                {
+                  "key": "fontFamily",
+                  "value": "pacifico"
+                },
+                {
+                  "key": "text",
+                  "value": "I+am+a+pacifico+font"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image with custom font size",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/image/400x200/008080/ffffff?text=Hello+Peter!&fontSize=16",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["image", "400x200", "008080", "ffffff"],
+              "query": [
+                {
+                  "key": "text",
+                  "value": "Hello+Peter!"
+                },
+                {
+                  "key": "fontSize",
+                  "value": "16"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Identicon",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/icon/abc123/150",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["icon", "abc123", "150"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authorization",
+      "item": [
+        {
+          "name": "Login user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Generating JSON data:\r",
+                  "let jsonData = pm.response.json();\r",
+                  "\r",
+                  "// Destructuring refreshToken/accessToken data from JSON object:\r",
+                  "let {refreshToken, accessToken} = jsonData;\r",
+                  "\r",
+                  "// Setting key/value pairs as global variables:\r",
+                  "if (accessToken && refreshToken) {\r",
+                  "    pm.globals.set(\"loginRefreshToken\", refreshToken);\r",
+                  "    pm.globals.set(\"loginAccessToken\", accessToken);\r",
+                  "} else {\r",
+                  "    console.log(\"Tokens are missing\");\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"sophiab\",\r\n    \"password\": \"sophiabpass\",\r\n    // Passing max acceptable value as per BVA (Boundary Value Analysis):\r\n    \"expiresInMins\": 43200\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/auth/login",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Current authorized user",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{loginAccessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/auth/me",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["auth", "me"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh authorized session",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refreshToken\": \"{{loginRefreshToken}}\",\r\n    \"expiresinMins\": 30\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/auth/refresh",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["auth", "refresh"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "All products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search products",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/search?q=phone",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "phone"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip products",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products?limit=10&skip=10&select=title,price",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "skip",
+                  "value": "10"
+                },
+                {
+                  "key": "select",
+                  "value": "title,price"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sort products",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products?sortBy=title&order=asc",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "title"
+                },
+                {
+                  "key": "order",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products categories",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/categories",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "categories"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products category list",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/category-list",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "category-list"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products by a category",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/products/category/smartphones",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "category", "smartphones"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add a product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"BMW Pencil\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/products/add",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"iPhone Galaxy +1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/products/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"message\": \"Product deleted successfully\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/products/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Carts",
+      "item": [
+        {
+          "name": "All carts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/carts",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["carts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single cart",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/carts/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["carts", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cart by user id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/carts/user/6",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["carts", "user", "6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add a cart",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": 51,\r\n    \"products\": [\r\n      {\r\n        \"id\": 124,\r\n        \"quantity\": 2\r\n      },\r\n      {\r\n        \"id\": 2,\r\n        \"quantity\": 3\r\n      }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/carts/add",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["carts", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a cart",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"merge\": true, // this will include existing products in the cart\r\n    \"products\": [\r\n      {\r\n        \"id\": 5,\r\n        \"quantity\": 4\r\n      }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/carts/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["carts", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a cart",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/carts/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["carts", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recipes",
+      "item": [
+        {
+          "name": "All recipes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single recipe",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search recipes",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes/search?q=Vegetarian",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "Vegetarian"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip recipes",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes?limit=2&skip=15&select=name,image",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "2"
+                },
+                {
+                  "key": "skip",
+                  "value": "15"
+                },
+                {
+                  "key": "select",
+                  "value": "name,image"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sort recipes",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes?sortBy=name&order=desc",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes"],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "name"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All tags",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes/tags",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes", "tags"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recipes by a tag",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes/tag/Chicken",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes", "tag", "Chicken"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recipes by a meal",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/recipes/meal-type/lunch",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["recipes", "meal-type", "lunch"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "All users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login user and get tokens",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let jsonData = pm.response.json();\r",
+                  "let {accessToken} = jsonData;\r",
+                  "\r",
+                  "if (accessToken) {\r",
+                  "    pm.globals.set(\"usersAccessToken\", accessToken);\r",
+                  "} else {\r",
+                  "    console.log(\"Access token is missing!\")\r",
+                  "}\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"madisonc\",\r\n    \"password\": \"madisoncpass\",\r\n    \"expiresInMins\": 43200 // max set value\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/user/login",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["user", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get current authenticated user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{usersAccessToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url_dummy}}/user/me",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["user", "me"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/search?q=Stewart",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "Stewart"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/filter?key=hair.color&value=Red",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "filter"],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "hair.color"
+                },
+                {
+                  "key": "value",
+                  "value": "Red"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users?limit=3&skip=0&select=firstName,hair",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "3"
+                },
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "select",
+                  "value": "firstName,hair"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sort users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users?sortBy=age&order=desc",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users"],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "age"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All posts tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/tags",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "tags"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Posts tag list",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/tag-list",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "tag-list"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Posts by a tag",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/tag/nostalgia",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "tag", "nostalgia"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User's carts by user id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/50/carts",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "50", "carts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User's posts by user id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/5/posts",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "5", "posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User's todos by user id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/6/todos",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "6", "todos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add a new user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Eglė\",\r\n    \"lastName\": \"Griciūtė\",\r\n    \"maidenName\": \"Griciūtė\",\r\n    \"age\": 30,\r\n    \"gender\": \"female\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/users/add",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"hair\": {\r\n        \"color\": \"red\",\r\n        \"type\": \"wavy\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/users/208",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "208"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/users/208",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["users", "208"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "All posts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single post",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/10",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "10"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search posts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/search?q=rainbow",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "rainbow"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip posts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts?limit=7&skip=0&select=title,reactions,userId,tags",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "7"
+                },
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "select",
+                  "value": "title,reactions,userId,tags"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sort posts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts?sortBy=views&order=asc",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "views"
+                },
+                {
+                  "key": "order",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All posts by user id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/user/6",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "user", "6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post's comments",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/2/comments",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "2", "comments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add a post",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"I am in love with someone.\",\r\n    \"userId\": 9\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/add",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a post",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"I think I should shift to the moon\",\r\n    \"reactions\": {\r\n        \"likes\": 0,\r\n        \"dislikes\": 30\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/5",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "5"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a post",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/posts/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["posts", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "All comments",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get comment count for postId 46\", function () {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "    const postId46 = responseData.comments.filter(comment => comment.postId === 46);\r",
+                  "    const commentCount = postId46.length;\r",
+                  "    console.log(\"Comment count for postId 46: \" + commentCount);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/comments",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single comment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Check comment count with id=46\", function () {\r",
+                  "    let jsonData = pm.response.json();\r",
+                  "    console.log(jsonData);\r",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/comments/46",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments", "46"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip comments",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/comments?limit=4&skip=15&select=body,postId",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "4"
+                },
+                {
+                  "key": "skip",
+                  "value": "15"
+                },
+                {
+                  "key": "select",
+                  "value": "body,postId"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All comments by post id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Check comment count with id=46\", function () {\r",
+                  "    let jsonData = pm.response.json().total;\r",
+                  "    console.log(jsonData);\r",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/comments/post/2",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments", "post", "2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add a comment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"body\": \"Lorem ipsum!\",\r\n    \"postId\": 3,\r\n    \"userId\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/comments/add",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a comment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"body\": \"Lorem ipsum!\",\r\n    \"dislikes\": 6\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/comments/10",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments", "10"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a comment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/comments/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["comments", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Todos",
+      "item": [
+        {
+          "name": "All todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/todos",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single todo",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/todos/5",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos", "5"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Random todo",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/todos/random/10",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos", "random", "10"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip todos",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/todos?limit=2&skip=0",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "2"
+                },
+                {
+                  "key": "skip",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add a todo",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"todo\": \"Use DummyJSON in the project\",\r\n    \"completed\": true,\r\n    \"userId\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/todos/add",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a todo",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"completed\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_dummy}}/todos/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a todo",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/todos/1",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["todos", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Quotes",
+      "item": [
+        {
+          "name": "All quotes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/quotes",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["quotes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single quote",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/quotes/7",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["quotes", "7"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Random quote",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/quotes/random/3",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["quotes", "random", "3"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Limit and skip quotes",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/quotes?limit=9&skip=3",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["quotes"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "9"
+                },
+                {
+                  "key": "skip",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Mock HTTP",
+      "item": [
+        {
+          "name": "Mock HTTP Response",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url_dummy}}/http/200",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["http", "200"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Custom HTTP Response",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url_dummy}}/http/204/",
+              "host": ["{{base_url_dummy}}"],
+              "path": ["http", "204", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          "// Check status code is valid:\r",
+          "pm.test(\"Status code is valid\", function () {\r",
+          "    pm.expect([200, 201, 204]).to.include(pm.response.code);\r",
+          "});\r",
+          "\r",
+          "// Check response Content-Type is valid:\r",
+          "pm.test('Response Content-Type is valid', function () {\r",
+          "    const contentType = pm.response.headers.get('Content-Type');\r",
+          "    const validTypes = ['application/json', 'image/png', 'image/webp'];\r",
+          "    pm.expect(validTypes.some(type => contentType.includes(type)), `Content-Type should be one of: ${validTypes.join(', ')}`).to.be.true;\r",
+          "});\r",
+          "\r",
+          "// Check JSON does not have error element:\r",
+          "pm.test(\"JSON does not have error element\", function () {\r",
+          "    let jsonData = pm.response.json();\r",
+          "    pm.expect(jsonData).to.not.have.property(\"error\");\r",
+          "});\r",
+          ""
+        ]
+      }
+    }
+  ]
 }
